@@ -7,7 +7,6 @@ soong_namespace {
         "device/infinix/X6880",
         "hardware/mediatek",
         "hardware/mediatek/libmtkperf_client",
-        "hardware/transsion",
     ],
 }
 
@@ -175,7 +174,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libhidlbase",
                 "libfmq",
-                "vendor.mediatek.hardware.videotelephony@1.0",
+                "vendor.mediatek.hardware.videotelephony@1.0_vendor",
                 "libc",
                 "libutils",
                 "libcutils",
@@ -193,7 +192,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libhidlbase",
                 "libfmq",
-                "vendor.mediatek.hardware.videotelephony@1.0",
+                "vendor.mediatek.hardware.videotelephony@1.0_vendor",
                 "libc",
                 "libutils",
                 "libcutils",
@@ -1047,7 +1046,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.videotelephony@1.0",
+    name: "vendor.mediatek.hardware.videotelephony@1.0_vendor",
+    stem: "vendor.mediatek.hardware.videotelephony@1.0",
     owner: "infinix",
     strip: {
         none: true,
@@ -1857,153 +1857,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libGLES_meow",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/egl/libGLES_meow.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libnativewindow",
-                "libhidlbase",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "egl",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libMEOW_data",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/egl/libMEOW_data.so",
-            ],
-            shared_libs: [
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "egl",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libMEOW_gift",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/egl/libMEOW_gift.so",
-            ],
-            shared_libs: [
-                "libFrameRecord",
-                "libDefaultFpsActor",
-                "libNoFpsActor",
-                "libnativewindow",
-                "libutilscallstack",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "egl",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libMEOW_qt",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/egl/libMEOW_qt.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libcutils",
-                "liblog",
-                "libnativewindow",
-                "libhidlbase",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "egl",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libMEOW_trace",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/egl/libMEOW_trace.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libnativewindow",
-                "libGLES_meow",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "egl",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libGLES_mali",
     owner: "infinix",
     strip: {
@@ -2030,7 +1883,6 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libbase",
                 "libz",
-                "arm.graphics-V1-ndk_platform",
                 "android.hardware.graphics.mapper@4.0",
                 "libgralloctypes",
                 "libhidlbase",
@@ -2168,7 +2020,7 @@ cc_prebuilt_library_shared {
                 "libhardware",
                 "libaudioutils",
                 "libtinyalsa",
-                "libtinyxml2",
+                "libtinyxml2-v34",
                 "libaudiotoolkit_vendor",
                 "libmedia_helper",
                 "libladder",
@@ -2190,36 +2042,6 @@ cc_prebuilt_library_shared {
                 "libkaraoke",
                 "libvpnr",
                 "libvpnr_enroll",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "audio.r_submix.mediatek",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/audio.r_submix.mediatek.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libmedia_helper",
-                "libutils",
-                "libnbaio_mono",
                 "libc++",
                 "libc",
                 "libm",
@@ -2949,7 +2771,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so",
             ],
             shared_libs: [
-                "libhidlbase-v32",
+                "libhidlbase-v31",
                 "libhidltransport",
                 "libhwbinder",
                 "libhardware",
@@ -2957,11 +2779,11 @@ cc_prebuilt_library_shared {
                 "android.hardware.sensors@1.0",
                 "android.hardware.sensors@1.0-convert-shared",
                 "liblog",
-                "libutils-v32",
+                "libutils-v31",
                 "libcutils",
                 "libpq_prot",
                 "libhidlmemory",
-                "libtinyxml2",
+                "libtinyxml2-v34",
                 "vendor.mediatek.hardware.pq@2.0",
                 "vendor.mediatek.hardware.pq@2.1",
                 "vendor.mediatek.hardware.pq@2.2",
@@ -3043,7 +2865,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libutils",
                 "libhardware",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v33",
                 "libhwm",
                 "libnvram",
                 "libfile_op",
@@ -14131,60 +13953,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libDefaultFpsActor",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libDefaultFpsActor.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libFrameRecord",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libFrameRecord.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libFy-3A-Core",
     owner: "infinix",
     strip: {
@@ -14303,33 +14071,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libNoFpsActor",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libNoFpsActor.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
                 "libc",
                 "libm",
                 "libdl",
@@ -15159,6 +14900,56 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libcutils",
                 "libapu_mdw",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarm_egl_properties_sysprop",
+    owner: "infinix",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libarm_egl_properties_sysprop.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarm_gralloc_properties_sysprop",
+    owner: "infinix",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libarm_gralloc_properties_sysprop.so",
+            ],
+            shared_libs: [
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -16462,7 +16253,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblog",
                 "libsfplugin_ccodec_utils",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v33",
                 "libbase",
                 "libcodec2",
                 "libcodec2_vndk",
@@ -16509,7 +16300,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblog",
                 "libsfplugin_ccodec_utils",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v33",
                 "libbase",
                 "libcodec2",
                 "libcodec2_vndk",
@@ -16559,7 +16350,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblog",
                 "libsfplugin_ccodec_utils",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v33",
                 "libbase",
                 "libcodec2",
                 "libcodec2_vndk",
@@ -16594,7 +16385,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcodec2_soft_common",
                 "libsfplugin_ccodec_utils",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v33",
                 "libcodec2",
                 "libcodec2_vndk",
                 "liblog",
@@ -16627,7 +16418,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcodec2_soft_common",
                 "libsfplugin_ccodec_utils",
-                "libstagefright_foundation",
+                "libstagefright_foundation-v33",
                 "libcodec2",
                 "libcodec2_vndk",
                 "liblog",
@@ -17527,6 +17318,31 @@ cc_prebuilt_library_shared {
                 "libdl",
                 "libc",
                 "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblibarm_mali_config_sysprops",
+    owner: "infinix",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liblibarm_mali_config_sysprops.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
             ],
         },
     },
@@ -18800,31 +18616,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "liboemcrypto",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/liboemcrypto.so",
-            ],
-            shared_libs: [
-                "libc",
-                "liblog",
-                "libc++",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "liboissr",
     owner: "infinix",
     strip: {
@@ -19152,7 +18943,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libutils",
                 "libtinyalsa",
-                "libtinyxml2",
+                "libtinyxml2-v34",
                 "liblog",
                 "libnvram",
                 "libcrypto",
@@ -20154,7 +19945,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libwvdrmengine",
+    name: "arm.graphics-V3-ndk",
     owner: "infinix",
     strip: {
         none: true,
@@ -20162,16 +19953,10 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/mediadrm/libwvdrmengine.so",
+                "proprietary/vendor/lib64/mt6789/arm.graphics-V3-ndk.so",
             ],
             shared_libs: [
-                "libbase",
-                "libcrypto",
-                "libhidlbase",
-                "liblog",
-                "libprotobuf-cpp-lite-3.9.1-vendorcompat",
-                "libstagefright_foundation",
-                "libutils",
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -20180,7 +19965,7 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    relative_install_path: "mediadrm",
+    relative_install_path: "mt6789",
     prefer: true,
     soc_specific: true,
 }
@@ -26216,7 +26001,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/mt6789/libmorpho_video_stabilizer.so",
             ],
             shared_libs: [
-                "libutils-v32",
+                "libutils-v31",
                 "libui",
                 "libc",
                 "libm",
@@ -32581,15 +32366,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "manifest_media_c2_V1_2_default.xml",
-    owner: "infinix",
-    src: "proprietary/vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "manifest_silead.xml",
     owner: "infinix",
     src: "proprietary/vendor/etc/vintf/manifest/manifest_silead.xml",
@@ -32894,49 +32670,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "android.hardware.media.c2@1.2-mediatek-64b",
-    owner: "infinix",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b",
-            ],
-            shared_libs: [
-                "libstagefright_foundation-v33",
-                "libbase",
-                "liblog",
-                "libcodec2",
-                "libutils",
-                "android.hardware.media.c2@1.0",
-                "android.hardware.media.c2@1.1",
-                "android.hardware.media.c2@1.2",
-                "libcodec2_hidl@1.0",
-                "libcodec2_hidl@1.1",
-                "libcodec2_hidl@1.2",
-                "libcodec2_vndk",
-                "libhidlbase",
-                "libavservices_minijail",
-                "libbinder",
-                "libcodec2_mtk_c2store",
-                "libcodec2_mtk_vdec",
-                "libcodec2_mtk_venc",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "android.hardware.neuralnetworks-shim-service-mtk",
     owner: "infinix",
     target: {
@@ -33172,7 +32905,7 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/hw/mtkfusionrild",
             ],
             shared_libs: [
-                "libutils-v32",
+                "libutils-v31",
                 "libmtkrillog",
                 "libmtkproperty",
                 "libmtkcutils",
@@ -33344,10 +33077,10 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service",
             ],
             shared_libs: [
-                "libhidlbase-v32",
+                "libhidlbase-v31",
                 "libhidltransport",
                 "liblog",
-                "libutils-v32",
+                "libutils-v31",
                 "libhardware",
                 "vendor.mediatek.hardware.pq@2.15",
                 "libc++",
@@ -33478,7 +33211,7 @@ cc_prebuilt_binary {
                 "liblog",
                 "libbase",
                 "libfmq",
-                "vendor.mediatek.hardware.videotelephony@1.0",
+                "vendor.mediatek.hardware.videotelephony@1.0_vendor",
                 "libhardware",
                 "libhwbinder",
                 "libhidlbase",
@@ -34152,13 +33885,6 @@ install_symlink {
 }
 
 install_symlink {
-    name: "vendor_lib64_hw_audio_r_submix_mt6789_so",
-    soc_specific: true,
-    installed_location: "lib64/hw/audio.r_submix.mt6789.so",
-    symlink_target: "/vendor/lib64/hw/audio.r_submix.mediatek.so",
-}
-
-install_symlink {
     name: "vendor_lib64_hw_kmsetkey_default_so",
     soc_specific: true,
     installed_location: "lib64/hw/kmsetkey.default.so",
@@ -34275,6 +34001,13 @@ install_symlink {
     soc_specific: true,
     installed_location: "lib64/arm.graphics-V1-ndk_platform.so",
     symlink_target: "/vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so",
+}
+
+install_symlink {
+    name: "vendor_lib64_arm_graphics-V3-ndk_so",
+    soc_specific: true,
+    installed_location: "lib64/arm.graphics-V3-ndk.so",
+    symlink_target: "/vendor/lib64/mt6789/arm.graphics-V3-ndk.so",
 }
 
 install_symlink {

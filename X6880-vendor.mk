@@ -729,12 +729,16 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6880/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml \
     vendor/infinix/X6880/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml \
     vendor/infinix/X6880/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml \
+    vendor/infinix/X6880/proprietary/vendor/etc/gralloc/cam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/cam.xml \
+    vendor/infinix/X6880/proprietary/vendor/etc/gralloc/dpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/dpu.xml \
+    vendor/infinix/X6880/proprietary/vendor/etc/gralloc/dpu_aeu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/dpu_aeu.xml \
+    vendor/infinix/X6880/proprietary/vendor/etc/gralloc/gpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/gpu.xml \
+    vendor/infinix/X6880/proprietary/vendor/etc/gralloc/vpu.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gralloc/vpu.xml \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.1-service-mediatek.rc \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.3-service.transsion.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.3-service.transsion.rc \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm@1.4-service.widevine.rc \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.gnss-service.mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss-service.mediatek.rc \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc \
-    vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.media.c2@1.2-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.c2@1.2-mediatek.rc \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.nfc@1.2-service-tms.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.nfc@1.2-service-tms.rc \
     vendor/infinix/X6880/proprietary/vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc \
@@ -788,7 +792,7 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6880/proprietary/vendor/etc/libnfc-tms_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-tms_RF.conf \
     vendor/infinix/X6880/proprietary/vendor/etc/libnfc-tms_RF_EC2.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-tms_RF_EC2.conf \
     vendor/infinix/X6880/proprietary/vendor/etc/libnfc-tms_RF_GB1.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-tms_RF_GB1.conf \
-    vendor/infinix/X6880/proprietary/vendor/etc/meow.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/meow.cfg \
+    vendor/infinix/X6880/proprietary/vendor/etc/mali_platform.config:$(TARGET_COPY_OUT_VENDOR)/etc/mali_platform.config \
     vendor/infinix/X6880/proprietary/vendor/etc/mtk_platform_codecs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_platform_codecs_config.xml \
     vendor/infinix/X6880/proprietary/vendor/etc/nnapi_powerhal.json:$(TARGET_COPY_OUT_VENDOR)/etc/nnapi_powerhal.json \
     vendor/infinix/X6880/proprietary/vendor/etc/nt37703a_fhdp_dsi_vdo_tm_tm_120hz_x6880_cust_color.xml:$(TARGET_COPY_OUT_VENDOR)/etc/nt37703a_fhdp_dsi_vdo_tm_tm_120hz_x6880_cust_color.xml \
@@ -930,7 +934,7 @@ PRODUCT_PACKAGES += \
     libwo \
     arm.graphics-V1-ndk_platform \
     libmtk_drvb \
-    vendor.mediatek.hardware.videotelephony@1.0 \
+    vendor.mediatek.hardware.videotelephony@1.0_vendor \
     libHEVCdec_sa.ca7.android \
     libh264dec_customize \
     libh264dec_sa.ca7 \
@@ -957,17 +961,11 @@ PRODUCT_PACKAGES += \
     APUWareHmpServer \
     APUWareUtilsServer \
     com.anc.fingerprint.extension@1.0 \
-    libGLES_meow \
-    libMEOW_data \
-    libMEOW_gift \
-    libMEOW_qt \
-    libMEOW_trace \
     libGLES_mali \
     anc.hal \
     android.hardware.gnss-impl-mediatek \
     android.hardware.gnss@2.1-impl-mediatek \
     audio.primary.mediatek \
-    audio.r_submix.mediatek \
     fingerprint.silead.default \
     gps.default \
     hwcomposer.mtk_common \
@@ -1448,14 +1446,11 @@ PRODUCT_PACKAGES += \
     libCamera_pbrohi5022qmipiraw_Video_Makeup_720p \
     libCamera_pbrohi5022qmipiraw_Video_Zoom1 \
     libCamera_pbrohi5022qmipiraw_Video_Zoom2 \
-    libDefaultFpsActor \
-    libFrameRecord \
     libFy-3A-Core \
     libFy-3A-Param \
     libJpgEncPipe \
     libMcClient \
     libMtkSpeechEnh \
-    libNoFpsActor \
     libOpenCL \
     libSQLiteModule_VER_ALL \
     libTEECommon \
@@ -1487,6 +1482,8 @@ PRODUCT_PACKAGES += \
     libapu_mdw_batch \
     libapusys \
     libapusys_edma \
+    libarm_egl_properties_sysprop \
+    libarm_gralloc_properties_sysprop \
     libarmnn \
     libarmnn_ndk.mtk.vndk \
     libasd \
@@ -1569,6 +1566,7 @@ PRODUCT_PACKAGES += \
     libkaraoke \
     libkmsetkey \
     libksensor \
+    liblibarm_mali_config_sysprops \
     libminiui \
     libmipc \
     libmml \
@@ -1613,7 +1611,6 @@ PRODUCT_PACKAGES += \
     libnpagent_server \
     libnvram \
     libnvram_sec \
-    liboemcrypto \
     liboissr \
     liboissr_v3 \
     libperfctl_vendor \
@@ -1661,7 +1658,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-mtk \
     libwpfa \
     libwvhidl \
-    libwvdrmengine \
+    arm.graphics-V3-ndk \
     gc02m3_mipi_raw_IdxMgr \
     gc02m3_mipi_raw_tuning \
     gc13a0ff_mipi_raw_IdxMgr \
@@ -2043,7 +2040,6 @@ PRODUCT_PACKAGES += \
     manifest_apuware_utils.xml \
     manifest_cameraprovider.xml \
     manifest_hwcomposer.xml \
-    manifest_media_c2_V1_2_default.xml \
     manifest_silead.xml \
     vendor.transsion.hardware.trancam.trancamserver@1.0.xml \
     ccci_mdinit \
@@ -2055,7 +2051,6 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.transsion \
     android.hardware.drm@1.4-service.widevine \
     android.hardware.gnss-service.mediatek \
-    android.hardware.media.c2@1.2-mediatek-64b \
     android.hardware.neuralnetworks-shim-service-mtk \
     android.hardware.nfc@1.2-service-tms \
     android.hardware.secure_element@1.2-service-mediatek \
@@ -2105,7 +2100,6 @@ PRODUCT_PACKAGES += \
     vendor_lib_libvpudv3a_vcodec_so \
     vendor_lib64_egl_libGLES_mali_so \
     vendor_lib64_hw_audio_primary_mt6789_so \
-    vendor_lib64_hw_audio_r_submix_mt6789_so \
     vendor_lib64_hw_kmsetkey_default_so \
     vendor_lib64_hw_gatekeeper_trustonic_so \
     vendor_lib64_hw_gatekeeper_default_so \
@@ -2123,6 +2117,7 @@ PRODUCT_PACKAGES += \
     vendor_lib64_hw_vulkan_mali_so \
     vendor_lib64_hw_sensors_mt6789_so \
     vendor_lib64_arm_graphics-V1-ndk_platform_so \
+    vendor_lib64_arm_graphics-V3-ndk_so \
     vendor_lib64_gc02m3_mipi_raw_IdxMgr_so \
     vendor_lib64_gc02m3_mipi_raw_tuning_so \
     vendor_lib64_gc13a0ff_mipi_raw_IdxMgr_so \
